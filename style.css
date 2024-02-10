@@ -1,4 +1,356 @@
-figcaption{
+/* css basics */
+/* .container { */
+  /* margin-top: 1rem;*/
+/*   border: 1px solid red;  */
+  /* width: 35%; */
+
+  /* background-color: rgb(251, 210, 156);
+  background-image: url('../background.jfif');
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: cover;
+  text-shadow: 2px 2px 5px #000; 
+  background-color: hsla(0, 0%, 0%, 0.403);
+  padding-radius: 10px; 
+  background-color: aliceblue;
+  background-image: linear-gradient(to right, steelblue, #fff);
+  */
+/* }
+.container img {
+  width: 50%;
+  height: auto;
+  min-width: 100px;
+  border: 5px double gray; */
+  /* border-radius: 50%; */
+/* } */
+
+
+/* css responsive card */
+/* h1{
+  background-color: rgb(101, 98, 98);
+} */
+.main {
+   /* display: grid; 
+   place-content: center; 
+  grid-template-columns: 100%;  */
+  text-align: center;
+}
+.amain {
+  /* flex-grow: 1; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  /* padding: 1rem; */
+}
+.pimg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.card {
+  /* scroll-margin-top: 8rem; */
+  width: min(100%, 350px);
+  background-color: #cbd5e1;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 1rem;
+  /* display: flex; 
+  flex-direction: column; 
+  align-items: center;  */
+}
+.card img {
+  border: 5px double black;
+  border-radius: 50%;
+}
+.card figcaption {
+  font-weight: bolder;
+  font-size: 2rem;
+  margin: 1rem;
+}
+
+
+
+
+
+
+
+/* css media queries and responsive web design */
+/* Syntax:
+@media media type and (condition: breakpoint) {
+  // CSS rules
+} */
+@media screen and (min-width: 280px) {
+  /* .container {
+    border: 1px solid red; 
+  } */
+  .amain {
+    justify-content: center;
+    flex-flow: row wrap;
+    padding: 1rem;
+  }
+  .card {
+    width: min(100%, 400px);
+  }
+
+  .container img {
+    width: 90%;
+    height: auto;
+    min-width: 100px;
+    border: 5px double gray;
+  }
+  .motherboard {
+    width: 90%;
+    height: auto;
+  }
+  .pcset {
+    width: 70%;
+    height: auto;
+  }
+}
+@media screen and (min-width: 576px) {
+  /* .container {
+    border: 1px solid red; 
+  } */
+  .amain {
+    justify-content: center;
+    flex-flow: row wrap;
+    padding: 1rem;
+  }
+  .card {
+    width: min(100%, 400px);
+  }
+  .card:last-child {
+    order: -1;
+  }
+
+  .container img {
+    width: 80%;
+    height: auto;
+    min-width: 100px;
+    border: 5px double gray;
+  }
+  .motherboard {
+    width: 90%;
+    height: auto;
+  }
+  .pcset {
+    width: 50%;
+    height: auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  .card {
+    width: min(100%, 325px);
+  }
+  .card figure {
+    flex-flow: column-reverse;
+  }
+  .card figcaption {
+    margin: 0.1em 0;
+  }
+  .card p {
+    margin-top: 1rem;
+  }
+  .card:last-child {
+    order: 1;
+  }
+
+  .container img {
+    width: 50%;
+    height: auto;
+    min-width: 100px;
+    border: 5px double gray;
+  }
+  .motherboard {
+    width: 100%;
+    height: auto;
+  }
+  .pcset {
+    width: 40%;
+    height: auto;
+  }
+}
+@media screen and (min-width: 992px) {
+  .card {
+    width: min(100%, 400px);
+  }
+  .card:nth-child(2){
+    order: -1;
+  }
+
+  .container img {
+    width: 50%;
+    height: auto;
+    min-width: 100px;
+    border: 5px double gray;
+  }
+  .motherboard {
+    width: 120%;
+    height: auto;
+  }
+  .pcset {
+    width: 35%;
+    height: auto;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .card {
+    width: min(calc(33% - 1rem), 330px);
+  }
+  /* .card {
+    width: min(100%, 330px);
+  } */
+  .card:last-child {
+    order: -2;
+  }
+  
+  .container img {
+    width: 60%;
+    height: auto;
+    min-width: 100px;
+    border: 5px double gray;
+  }
+  .motherboard {
+    width: 140%;
+    height: auto;
+  }
+  .pcset {
+    width: 40%;
+    height: auto;
+  }
+}
+
+@media screen and (max-height: 425px) and (min-aspect-ratio: 7/4) {
+   /* mobile device landscape  */
+  .amain {
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+  }
+  .card {
+    width: min(calc(33% - 0.25rem), 200px);
+  }
+  /* .card {
+    width: min(50%, 140px);
+  } */
+  .card figcaption, .card p {
+    font-size: 0.8rem;
+  }
+
+  .container img {
+    width: 70%;
+    height: auto;
+    min-width: 100px;
+    border: 5px double gray;
+  }
+  .motherboard {
+    width: 100%;
+    height: auto;
+  }
+  .pcset {
+    width: 40%;
+    height: auto;
+  }
+} 
+
+/* css pseudo-classes, pseudo-elements, pseudo-selectors */
+/* :is(header,footer,.card){
+  code here
+} */
+nav a:any-link {
+  color: rgb(0, 0, 0);
+}
+nav :is(a:hover, a:focus) {
+  color: hsla(0, 0%, 20%, 0.6)
+}
+nav a:active {
+  color: red;
+}
+/* .card:target{
+  border: 2px solid rebeccapurple;
+} 
+.card img[alt] {
+  border: 10px solid red;
+}
+.card img:not([alt]) {
+  border: 10px solid red;
+}
+*/
+.card:nth-child(2){
+  background-color: papayawhip;
+}
+
+.card figcaption::after{
+  content: '👋';
+  display: block;
+}
+.card p {
+  position: relative;
+}
+.card p::before {
+  content: open-quote;
+  font-size: 3em;
+  position: absolute;
+  top: -0.25em;
+  left: -0.5em;
+}
+.card p::after {
+  content: close-quote;
+  font-size: 3em;
+  position: absolute;
+  top: -0.25em;
+  right: -0.5em;
+}
+.card figcaption::first-letter{
+  font-size: 3rem;
+}
+
+/* css custom variables */
+:root {
+  /* FONT */
+  --FF: sans-serif;
+  --FS: 1.1rem;
+ /*  COLOR */
+ --BGCOLOR: whitesmoke;
+ --BGCOLOR1: rgb(61, 151, 199);
+/*   General 
+  --PADDING: 0.5rem; 
+  --SHADOWS: 0 6px 5px -5px var(--DARK-COLOR);
+  --BORDERS: 2px solid var(--DARK-COLOR);
+  nav{
+    box-shadow: var(--SHADOWS);
+  }
+  */
+}
+body{
+  font: var(--FS) var(--FF);
+  background-color: var(--BGCOLOR);
+  background-image: linear-gradient(var(--BGCOLOR), var(--BGCOLOR1), var(--BGCOLOR));
+}
+
+/* css functions */
+:root{
+  --FSF: min(1.3rem, 3vh);
+  /* --FS: clamp(1.75rem, 3vh, 2.25rem); */
+  --FBT: max(1.8rem, 3vh);
+}
+body{
+  font: var(--FSF) var(--FF);
+}
+.max {
+  font-size: var(--FBT);
+}
+
+
+
+
+
+
+
+
+
+/* figcaption{
     font-weight: bolder;
 }
 a:active{
@@ -33,4 +385,4 @@ nav ul li a {
   
 nav ul li a:hover {
     background-color: #111111;
-  }
+  } */
